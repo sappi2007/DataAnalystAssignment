@@ -62,7 +62,7 @@ function joinTabs() {
   });
 
   Object.keys(dataMap).forEach(function(hostPartenerName) {
-    let tabName = hostPartenerName.substring(0, 25); // Trim to 25 characters for tab name limit
+    let tabName = hostPartenerName.substring(); 
     let existingSheet = ss.getSheetByName(tabName);
     let sheet;
     if (existingSheet) {
@@ -113,6 +113,7 @@ function joinTabs() {
       if (sheet) {
         sheet.getRange(1, 1, 1, 1).setValue(row[1]);  // Cell A1
         sheet.getRange(6, 1, 1, 1).setValue(row[0]);  // Cell A6
+        //sheet.getRange(6, 2, 1, 1).setValue(row[2]);  // Cell B5
         sheet.getRange(6, 2, 1, 1).setValue(row[3]);  // Cell B6
         sheet.getRange(7, 1, 1, 1).setValue(row[2]);  // Cell A7
         sheet.getRange(6, 3, 1, 1).setValue(row[1]);  // Cell A7
